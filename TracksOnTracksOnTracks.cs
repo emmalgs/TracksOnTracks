@@ -5,46 +5,78 @@ public static class Languages
 {
     public static List<string> NewList()
     {
-        throw new NotImplementedException("Please implement the static Languages.NewList() method");
+        return new List<string>();
     }
 
     public static List<string> GetExistingLanguages()
     {
-        throw new NotImplementedException("Please implement the static Languages.GetExistingLanguages() method");
+        return new List<string> { "C#", "Clojure", "Elm" };
     }
 
     public static List<string> AddLanguage(List<string> languages, string language)
     {
-        throw new NotImplementedException("Please implement the static Languages.AddLanguage() method");
+        languages.Add(language);
+        return languages;
     }
 
     public static int CountLanguages(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.CountLanguages() method");
+        return languages.Count;
     }
 
     public static bool HasLanguage(List<string> languages, string language)
     {
-        throw new NotImplementedException("Please implement the static Languages.HasLanguage() method");
+        return languages.Contains(language);
     }
 
     public static List<string> ReverseList(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.ReverseList() method");
+        languages.Reverse();
+        return languages;
     }
 
     public static bool IsExciting(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.IsExciting() method");
+        if (languages.Count == 0) {
+            return false;
+        }
+        else if (languages[0] == "C#")
+        {
+            return true;
+        }
+        else if (languages.Count == 2 || languages.Count == 3)
+        {
+            if (languages[1] == "C#")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public static List<string> RemoveLanguage(List<string> languages, string language)
     {
-        throw new NotImplementedException("Please implement the static Languages.RemoveLanguage() method");
+        languages.Remove(language);
+        return languages;
     }
 
     public static bool IsUnique(List<string> languages)
     {
-        throw new NotImplementedException("Please implement the static Languages.IsUnique() method");
+        languages.Sort();
+        for (int i = 0; i < languages.Count - 1; i++)
+        {
+            if (languages[i] == languages[i + 1])
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
